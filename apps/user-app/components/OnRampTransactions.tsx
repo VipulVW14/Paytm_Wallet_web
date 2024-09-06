@@ -6,7 +6,7 @@ export const OnRampTransactions = ({
     transactions: {
         time: Date,
         amount: number,
-        // TODO: Can the type of `status` be more specific?
+        // TODO: the type of `status` can be more specific
         status: string,
         provider: string
     }[]
@@ -19,20 +19,23 @@ export const OnRampTransactions = ({
         </Card>
     }
     return <Card title="Recent Transactions">
-        <div className="pt-2">
-            {transactions.map(t => <div className="flex justify-between">
-                <div>
+        <div 
+            className="pt-2 relative overflow-auto"
+            style={{ maxHeight: `calc(40vh - 1px)` }}
+        >
+            {transactions.slice().reverse().map(t => <div className="justify-items-center grid grid-cols-3 my-2 mx-1 mr-5">
+                <div className="justify-self-start">
                     <div className="text-sm">
-                        Received INR
+                        From {t.provider}
                     </div>
                     <div className="text-slate-600 text-xs">
                         {t.time.toDateString()}
                     </div>
                 </div>
-                <div>
+                <div className="flex flex-col justify-center">
                     {t.status}
                 </div>
-                <div className="flex flex-col justify-center">
+                <div className="flex flex-col justify-center justify-self-end">
                     + Rs {t.amount / 100}
                 </div>
 
