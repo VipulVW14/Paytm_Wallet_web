@@ -7,6 +7,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../../lib/auth";
 import TitleTopper from "@repo/ui/titletopper";
 import { P2pTransactions } from "../../../components/P2pTransactions";
+import { useEffect } from "react";
 
 async function getP2pTransfers() {
     const session = await getServerSession(authOptions);
@@ -32,7 +33,6 @@ async function getP2pTransfers() {
 
 export default async function (){
     const transactions = await getP2pTransfers();
-
 
     return <div className="w-screen">
             <div className="grid grid-cols-2 px-4 text-gray-800">

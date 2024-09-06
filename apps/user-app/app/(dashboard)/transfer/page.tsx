@@ -38,7 +38,7 @@ export default async function() {
     const balance = await getBalance();
     const transactions = await getOnRampTransactions();
 
-    return <div className="w-screen">
+    return <div className="w-screen h-screen">
         <TitleTopper title="Topup Wallet"/>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 px-4 mx-6 text-gray-800">
             <div>

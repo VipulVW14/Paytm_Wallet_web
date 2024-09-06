@@ -8,11 +8,11 @@ export default function Layout({
 }): JSX.Element {
   return (
     <div className="flex h-full">
-        <div className="w-64 border-r border-slate-300 mr-5 pt-28 space-y-4">
+        <div className="w-72 border-r border-slate-300 mr-5 pt-8 space-y-5">
                 <SidebarItem href={"/dashboard"} icon={<HomeIcon />} title="Home" />
                 <SidebarItem href={"/p2p"} icon={<TransferIcon />} title="Transfer Money" />
                 <SidebarItem href={"/transfer"} icon={<P2PTransferIcon />} title="Topup Wallet" />
-                <SidebarItem href={"/transactions"} icon={<TransactionsIcon />} title="Transactions" />
+                {/* <SidebarItem href={"/transactions"} icon={<TransactionsIcon />} title="Transactions" /> */}
         </div>
             {children}
     </div>
