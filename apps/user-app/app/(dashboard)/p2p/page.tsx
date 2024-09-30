@@ -34,7 +34,7 @@ async function getP2pTransfers() {
 export default async function (){
     const transactions = await getP2pTransfers();
 
-    return <div className="w-screen">
+    return <div className="w-screen h-screen">
             <div className="grid grid-cols-2 px-4 text-gray-800">
                 <div>
                     < TitleTopper title="Transfer Money"/>

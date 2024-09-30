@@ -21,14 +21,13 @@ export default async function () {
     const session = await getServerSession(authOptions);
     const balance = await getBalance();
 
-    return <div className="h-screen w-full">
+    return <div className="h-screen w-screen">
         <div className="m-5 flex ">
             <div className="mr-36">
-                <TitleTopper title={`Hi, ${session.user.name}`} />
                 <TitleTopper title="Welcome to WalletPe"/>
                 
                 <div className=" bg-white h-fit w-fit px-5 pt-4 mt-10 mx-6 border-2 shadow-sm rounded-xl">
-                    <p className="text-2xl font-sans tracking-wide text-gray-800 font-semibold">Current Wallet Balance</p>
+                    <p className="text-2xl font-sans tracking-wide text-gray-800 font-semibold">Your current balance</p>
                     <TitleTopper title={`₹ ${balance.amount / 100}`} />
                 </div>
             </div>
